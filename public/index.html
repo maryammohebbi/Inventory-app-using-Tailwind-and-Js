@@ -6,8 +6,8 @@
     <title>Inventory App</title>
     <link rel="stylesheet" href="/public/build/tailwind.css">
 </head>
-<body>
-    <div class="bg-slate-800 w-screen h-screen">
+<body class="bg-slate-800">
+    <div class="">
         <!-- app bar -->
         <div class="h-12 flex items-center justify-center gap-x-3 bg-slate-700">
             <h1 class="text-xl font-bold text-slate-300">Inventory App</h1>
@@ -17,9 +17,9 @@
         <!-- app content -->
         <div class="container max-w-sm md:max-w-xl mx-auto">
             <!-- category form -->
-            <div class="p-5">
+            <div class="mb-5">
                 <h1 class="text-slate-400">Add New Category</h1>
-                <form class= "bg-slate-700 p-5 flex flex-col gap-y-6"> 
+                <form class= "bg-slate-700 p-5 flex flex-col gap-y-6 rounded-lg"> 
                     <div>
                         <label for="category-title" class="block mb-1 text-slate-400">Category Title:</label>
                         <input type="text" name="category-title" id="category-title" placeholder="Title..." 
@@ -39,8 +39,33 @@
 
 
             <!-- product form -->
-
-            
+            <div>
+                <h1 class="text-slate-400">Add New Product</h1>
+                <form action="" class="bg-slate-700 flex flex-col gap-y-6 p-5 rounded-lg">
+                    <div>
+                        <label class="block text-slate-400 mb-1" for="product-title">Product Title:</label>
+                        <input class="bg-transparent border border-slate-500 rounded p-2 focus:ring-slate-400" 
+                        type="text" name="product-title" id="product-title" placeholder="Product Title...">
+                    </div>
+                    <div>
+                        <label class="block text-slate-400 mb-1" for="product-quantity">Quantity:</label>
+                        <input class="bg-transparent rounded focus:ring-slate-400 p-2" 
+                        type="number" name="product-quantity" id="product-quantity" placeholder="Quantity...">
+                    </div>
+                    <div>
+                        <label class="block text-slate-400" for="product-category">Category:</label>
+                        <select name="product-category" id="product-category" 
+                        class="bg-transparent w-full text-slate-400 focus:ring-slate-400">
+                            <option class="text-slate-400 bg-slate-800" value="">Select a category</option>
+                            <option class="text-slate-400 bg-slate-800" value="pen">Pen</option>
+                            <option class="text-slate-400 bg-slate-800" value="pencil">Pencil</option>
+                            <option class="text-slate-400 bg-slate-800" value="notebook">Notebook</option>
+                            <option class="text-slate-400 bg-slate-800" value="eraser">Eraser</option>
+                        </select>
+                    </div>
+                    <button class="flex-1 bg-slate-300 py-2 rounded text-slate-700 text-md">Add New Product</button>
+                </form>
+            </div>
         </div>
     </div>
 
