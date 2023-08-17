@@ -9,8 +9,39 @@
 <body>
     <div class="bg-slate-800 w-screen h-screen">
         <!-- app bar -->
-        
+        <div class="h-12 flex items-center justify-center gap-x-3 bg-slate-700">
+            <h1 class="text-xl font-bold text-slate-300">Inventory App</h1>
+            <span class="flex items-center justify-center w-7 h-7 rounded-full bg-slate-500  border-2 border-slate-300 font-bold text-slate-300">7</span>
+        </div>
+
         <!-- app content -->
+        <div class="container max-w-sm md:max-w-xl mx-auto">
+            <!-- category form -->
+            <div class="p-5">
+                <h1 class="text-slate-400">Add New Category</h1>
+                <form class= "bg-slate-700 p-5 flex flex-col gap-y-6"> 
+                    <div>
+                        <label for="category-title" class="block mb-1 text-slate-400">Category Title:</label>
+                        <input type="text" name="category-title" id="category-title" placeholder="Title..." 
+                        class="bg-transparent border border-slate-500 p-2 rounded text-slate-300 focus:ring-slate-300">
+                    </div>
+                    <div>
+                        <label for="category-description" class="block mb-1 text-slate-400">Category Description:</label>
+                        <textarea name="category-description" id="category-description" cols="30" rows="10" 
+                        class="w-full h-20 bg-transparent border border-slate-500 rounded text-slate-300 focus:ring-slate-400"></textarea>
+                    </div>
+                    <div class="flex gap-x-2">
+                        <button class="flex-1 border border-slate-500 py-3 px-7 text-xs rounded text-slate-300 bg-transparent">Cancel</button>
+                        <button class="flex-1 border border-slate-500 bg-slate-300 py-3 px-7 text-xs rounded text-slate-700">Add New Category</button>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- product form -->
+
+            
+        </div>
     </div>
 
 </body>
