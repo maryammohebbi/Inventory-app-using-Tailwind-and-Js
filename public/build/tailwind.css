@@ -801,6 +801,9 @@ select {
 .p-2 {
   padding: 0.5rem;
 }
+.p-3 {
+  padding: 0.75rem;
+}
 .p-5 {
   padding: 1.25rem;
 }
@@ -855,10 +858,6 @@ select {
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity));
 }
-.text-red-300 {
-  --tw-text-opacity: 1;
-  color: rgb(252 165 165 / var(--tw-text-opacity));
-}
 .focus\:ring-slate-300:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(203 213 225 / var(--tw-ring-opacity));
@@ -866,6 +865,12 @@ select {
 .focus\:ring-slate-400:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(148 163 184 / var(--tw-ring-opacity));
+}
+@media (min-width: 640px) {
+
+  .sm\:p-0 {
+    padding: 0px;
+  }
 }
 @media (min-width: 768px) {
 
