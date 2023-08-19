@@ -1,4 +1,26 @@
-const products = [];
+const products = [
+    {
+        id: 1,
+        title: "bic",
+        category: "pen",
+        quantity: 10,
+        createdAt: "2022-12-01T10:47:26.889Z",
+    },
+    {
+        id: 2,
+        title: "tandis",
+        category: "notebook",
+        quantity: 8,
+        createdAt: "2022-11-01T10:47:26.889Z",
+    },
+    {
+        id: 3,
+        title: "ilia",
+        category: "notebook",
+        quantity: 4,
+        createdAt: "2022-12-01T11:47:26.889Z",
+    },
+];
 
 const categories =[
     {
@@ -22,7 +44,7 @@ export default class Storage{
 
     static getAllCategories(){
         //categories, products => localstorage
-        const savedCategories = JSON.parse(localStorage.getItem("categories")) || [];
+        const savedCategories = JSON.parse(localStorage.getItem("category")) || [];
         // sort descending
         const sortedCategories = savedCategories.sort((a, b)=>{
             return new Date(a.createdAt) > new Date(b.createdAt) ? -1 : 1;
@@ -34,7 +56,7 @@ export default class Storage{
         //taking all the categories first in order to compare and also push into them the new one
         const savedCategories = Storage.getAllCategories();
         //
-        const existedItem = savedCategories.find(c => c.id = categoryToSave.id);
+        const existedItem = savedCategories.find(c => c.id === categoryToSave.id);
         if(existedItem){
             // edit
             existedItem.title = categoryToSave.title;
@@ -48,4 +70,28 @@ export default class Storage{
 
         localStorage.setItem("category", JSON.stringify(savedCategories));
     };
+
+    static getAllProducts(){
+       const savedProducts = JSON.parse(localStorage.getItem("products")) || [];
+       const sortedProducts = savedProducts.sort((a, b)=>{
+            return new Date(a.createdAt) > new Date(b.createdAt) ? -1 : 1;
+        });
+        return sortedProducts;
+    };
+
+    static saveProduct(productToSave){
+        const savedProducts = Storage.getAllProducts();
+
+        const existedProduct = savedProducts.find(p => p.id === productToSave.id);
+        if(existedProduct){
+            existedProduct.title = productToSave.title;
+            existedProduct.category = productToSave.category;
+            existedProduct.quantity = productToSave.quantity;
+        }else{
+            productToSave.id = new Date().getTime();
+            productToSave.createdAt = new Date().toISOString();
+            savedProducts.push(productToSave);
+        }
+        localStorage.setItem("products", JSON.stringify(savedProducts));
+    }
 }
