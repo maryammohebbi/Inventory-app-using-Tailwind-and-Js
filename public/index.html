@@ -44,23 +44,18 @@
                 <form action="" class="bg-slate-700 flex flex-col gap-y-6 p-5 rounded-lg">
                     <div>
                         <label class="block text-slate-400 mb-1" for="product-title">Product Title:</label>
-                        <input class="bg-transparent border border-slate-500 rounded p-2 focus:ring-slate-400" 
+                        <input class="bg-transparent border text-slate-400 border-slate-500 rounded p-2 focus:ring-slate-400" 
                         type="text" name="product-title" id="product-title" placeholder="Product Title...">
                     </div>
                     <div>
                         <label class="block text-slate-400 mb-1" for="product-quantity">Quantity:</label>
-                        <input class="bg-transparent rounded focus:ring-slate-400 p-2" 
+                        <input class="bg-transparent rounded text-slate-400 focus:ring-slate-400 p-2" 
                         type="number" name="product-quantity" id="product-quantity" placeholder="Quantity...">
                     </div>
                     <div>
                         <label class="block text-slate-400" for="product-category">Category:</label>
                         <select name="product-category" id="product-category" 
                         class="bg-transparent w-full text-slate-400 focus:ring-slate-400">
-                            <!-- <option class="text-slate-400 bg-slate-800" value="">Select a category</option>
-                            <option class="text-slate-400 bg-slate-800" value="pen">Pen</option>
-                            <option class="text-slate-400 bg-slate-800" value="pencil">Pencil</option>
-                            <option class="text-slate-400 bg-slate-800" value="notebook">Notebook</option>
-                            <option class="text-slate-400 bg-slate-800" value="eraser">Eraser</option> -->
                         </select>
                     </div>
                     <button  id="add-new-product" class="flex-1 bg-slate-300 py-2 rounded text-slate-700 text-md">Add New Product</button>
@@ -73,28 +68,14 @@
                 <!-- sort -->
                 <div></div>
                 <!-- search -->
-                <div></div>
+                <div class="flex items-center justify-between mb-5">
+                    <label class="block text-slate-400" for="search-input">Search</label>
+                    <input class="bg-transparent rounded-lg text-slate-400 focus:ring-slate-400" 
+                    type="text" placeholder="Search products..." name="search-input" id="search-input">
+                </div>
 
                 <!-- products list -->
                 <div id="product-list">
-                    <!-- <div class="flex items-center justify-between mb-5">
-                        <span class="text-slate-300 text-sm font-bold">product name</span>
-                        <div class="flex items-center gap-x-2">
-                            <span class="text-slate-400 text-sm">12/07/1371</span>
-                            <span class="text-slate-500 border border-slate-500 px-2 rounded-xl">category</span>
-                            <span class="border-2 border-slate-300 rounded-full w-6 h-6 bg-slate-500 font-bold flex items-center justify-center p-1 text-slate-300">10</span>
-                            <button class="text-red-400 text-sm font-bold">delete</button>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between mb-5">
-                        <span class="text-slate-300 text-sm font-bold">product name 2</span>
-                        <div class="flex items-center gap-x-2">
-                            <span class="text-slate-400 text-sm">12/07/1371</span>
-                            <span class="text-slate-500 border border-slate-500 px-2 rounded-xl">pen</span>
-                            <span class="border-2 border-slate-300 rounded-full w-6 h-6 bg-slate-500 font-bold flex items-center justify-center p-1 text-slate-300">7</span>
-                            <button class="text-red-400 text-sm font-bold">delete</button>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
