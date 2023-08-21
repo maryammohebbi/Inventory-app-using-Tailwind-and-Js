@@ -4,6 +4,6 @@ import ProductView from "./ProductView.js";
 document.addEventListener("DOMContentLoaded", ()=>{
     CategoryView.setApp();
     CategoryView.createCategoriesList();
-    ProductView.setProducts();
-    ProductView.createNewProduct(ProductView.products);
+    ProductView.setApp();
+    ProductView.createProductsList(ProductView.products);
 })

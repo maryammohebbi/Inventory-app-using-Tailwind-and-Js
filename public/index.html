@@ -64,14 +64,22 @@
 
             <!-- product list and search -->
             <div>
-                <h1 class="text-slate-400 font-bold mb-5">Products list:</h1>
-                <!-- sort -->
-                <div></div>
+                <h1 class="text-slate-400 font-bold mb-5">Products list:</h1>            
                 <!-- search -->
                 <div class="flex items-center justify-between mb-5">
                     <label class="block text-slate-400" for="search-input">Search</label>
                     <input class="bg-transparent rounded-lg text-slate-400 focus:ring-slate-400" 
                     type="text" placeholder="Search products..." name="search-input" id="search-input">
+                </div>
+
+                <!-- sort -->
+                <div class="flex items-center justify-between mb-5">
+                    <label class="text-slate-400" for="sort-products">Sort Products</label>
+                    <select name="sort-products" id="sort-products" class="bg-transparent text-slate-400 focus:ring-slate-400 rounded-lg text-sm">
+                        <option class="bg-slate-800 text-slate-400" value="">Select an option</option>
+                        <option class="bg-slate-800 text-slate-400" selected value="newest">Newest</option>
+                        <option class="bg-slate-800 text-slate-400" value="oldest">Oldest</option>
+                    </select>
                 </div>
 
                 <!-- products list -->
