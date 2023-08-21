@@ -3,11 +3,16 @@ import Storage from "./Storage.js";
 const categoryTitle = document.querySelector("#category-title");
 const categoryDescription = document.querySelector("#category-description");
 const addNewCategoryBtn = document.querySelector("#add-new-category");
+const toggleAddCategoryBtn = document.querySelector("#toggle-add-category");
+const categoryWrapper = document.querySelector("#category-wrapper");
+const cancelNewCategoryBtn = document.querySelector("#cancel-new-category");
 
 
 class CategoryView{
     constructor(){
         addNewCategoryBtn.addEventListener("click", (e) => this.addNewCategory(e));
+        toggleAddCategoryBtn.addEventListener("click", e => this.toggleAddCategory(e));
+        cancelNewCategoryBtn.addEventListener("click", e => this.cancelNewCategory(e));
         this.categories = [];
     }
 
@@ -22,6 +27,8 @@ class CategoryView{
         this.createCategoriesList();
         categoryTitle.value = "";
         categoryDescription.value = "";
+        categoryWrapper.classList.add("hidden");
+        toggleAddCategoryBtn.classList.remove("hidden");
     }
 
     setApp(){
@@ -37,7 +44,18 @@ class CategoryView{
 
         const categoryDOM = document.getElementById("product-category");
         categoryDOM.innerHTML = result;
+    }
 
+    toggleAddCategory(e){
+        e.preventDefault();
+        categoryWrapper.classList.remove("hidden");
+        toggleAddCategoryBtn.classList.add("hidden");
+    }
+
+    cancelNewCategory(e){
+        e.preventDefault();
+        categoryWrapper.classList.add("hidden");
+        toggleAddCategoryBtn.classList.remove("hidden");
     }
 }
 
