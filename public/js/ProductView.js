@@ -6,6 +6,7 @@ const addNewProductBtn = document.querySelector("#add-new-product");
 const productCategories = document.querySelector("#product-category");
 const searchInput = document.querySelector("#search-input");
 const sortProducts = document.querySelector("#sort-products");
+const productNumber = document.querySelector("#product-numbers")
 
 
 class ProductView{
@@ -27,9 +28,12 @@ class ProductView{
         this.createProductsList(this.products);
         productTitle.value = "";
         productQuantity.value = "";
+        this.productNum()
+
     }
     setApp(){
         this.products = Storage.getAllProducts();
+        this.productNum()
     }
 
     createProductsList(products){
@@ -76,7 +80,13 @@ class ProductView{
         Storage.deleteProduct(productId);
         this.products= Storage.getAllProducts();
         this.createProductsList(this.products);
+        this.productNum()
 
+    }
+    productNum(){
+        this.products = Storage.getAllProducts();
+        const num = this.products.length;
+        productNumber.innerHTML = num;
     }
 }
 
